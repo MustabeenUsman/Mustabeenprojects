@@ -1,0 +1,35 @@
+{% extends 'CRED/main.html'%}
+{% load static %}   
+{% block content %}
+
+<div class="section-wrraper">
+    <div class="wrapper">
+        {% for item in books %}
+        <div style="padding: 0px;background: #ddebfb;box-shadow: rgb(60 76 63 / 8%) 3px 2px 21px 11px, rgb(60 64 76 / 20%) 0px 2px 14px 5px;
+        border-radius: 20px;border: 0px;" class="box-wrraper">
+            <img style="width: 290px;
+            /* object-fit: contain; */
+            height: 200px;border-top-left-radius: 20px;
+            border-top-right-radius: 20px;" src="{{item.image.url}}" alt="My static images">
+            <br>
+            <h4 style="font-size: 20px;
+            font-weight: 600;padding: 10px;height: 58px;">{{item.name}}</h4>
+            <div class="inside-button">
+                <button style="border-radius: 1.2rem;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                margin: 0.5rem 0rem;    margin-bottom: 13px;"><a style="color: white;text-decoration:none"
+                href="/approch_book/{{item.id}}" target="_blank">Approach</a></button>
+                <button style="border-radius: 1.2rem;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                margin: 0.5rem 0rem;"><a style="color: white;text-decoration:none" 
+                href="/save_book/{{item.id}}">Save</a></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
